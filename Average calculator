@@ -1,0 +1,22 @@
+num_list = []
+    no = 0
+    x = 1
+    try:
+        while no <= 0:
+            no = int(input("How many subjects?\n"))
+            if no <= 0:
+                print("Please enter a positive number")
+    except ValueError:
+        print("Please enter a valid number")
+    for y in range(no):
+        try:
+            num = float(input("Enter your grade for subject " + str(x) + ": "))
+            num_list.append(num)
+            x += 1
+        except ValueError:
+            print("Please enter a valid number")
+    try:
+        average = sum(num_list) / len(num_list)
+        print("Your average is", average)
+    except ZeroDivisionError:
+        print("Cannot calculate average. Please enter at least one grade.")
