@@ -1,0 +1,41 @@
+    def add(x,y):
+        return x + y
+    def sub(x,y):
+        return x - y
+    def mul(x ,y):
+        return x * y
+    def div(x,y):
+        return x / y
+
+    num1 = 0
+    num2 = 0
+
+    print("Select operation.")
+    print("1.Add")
+    print("2.Subtract")
+    print("3.Multiply")
+    print("4.Divide")
+
+    choice = input("Enter choice (1,2,3,4):\n")
+
+    try:
+        num1 = float(input("Enter the first number\n"))
+        num2 = float(input("Enter the second number\n"))
+    except ValueError:
+        print("\nPlease enter a real number")
+        sys.exit()
+
+    if choice == "1":
+        print(num1, "+", num2, "=", add(num1,num2))
+    elif choice == "2":
+        print(num1, "-", num2, "=", sub(num1,num2))
+    elif choice == "3":
+        print(num1, "*", num2, "=", mul(num1,num2))
+    elif choice == "4":
+        if num2 != 0:
+            print(num1, "/", num2, "=", div(num1, num2))
+        else:
+            print("Can`t divide on zero")
+    elif choice != "1" or "2" or "3" or "4":
+        print("\nEnter your choice between (1,2,3,4)")
+        
